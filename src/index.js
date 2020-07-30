@@ -61,17 +61,19 @@ const ProductTable = ({products, filterText, inStockOnly}) => {
   );
 }
 
-const SearchBar = ({filterText, inStockOnly}) => (
+const SearchBar = ({filterText, inStockOnly, setFilterText, setInStockOnly}) => (
   <form>
     <input
       type="text"
       placeholder="Search..."
       value={filterText}
+      onChange={(e) => setFilterText(e.target.value)}
     />
     <p>
       <input
         type="checkbox"
         checked={inStockOnly}
+        onChange={(e) => setInStockOnly(e.target.checked)}
       />
       {' '}
       Only show products in stock
@@ -87,6 +89,8 @@ const FilterableProductTable = ({products}) => {
       <SearchBar
         filterText={filterText}
         inStockOnly={inStockOnly}
+        setFilterText={setFilterText}
+        setInStockOnly={setInStockOnly}
       />
       <ProductTable
         products={products}
