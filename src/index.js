@@ -70,13 +70,15 @@ const SearchBar = ({filterText, inStockOnly, setFilterText, setInStockOnly}) => 
       onChange={(e) => setFilterText(e.target.value)}
     />
     <p>
-      <input
-        type="checkbox"
-        checked={inStockOnly}
-        onChange={(e) => setInStockOnly(e.target.checked)}
-      />
-      {' '}
-      Only show products in stock
+      <label>
+        <input
+          type="checkbox"
+          checked={inStockOnly}
+          onChange={(e) => setInStockOnly(e.target.checked)}
+        />
+        {' '}
+        Only show products in stock
+      </label>
     </p>
   </form>
 );
