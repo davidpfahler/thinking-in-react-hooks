@@ -12,15 +12,11 @@ const ProductCategoryRow = ({category}) => (
 );
 
 const ProductRow = ({product}) =>  {
-  const name = product.stocked ?
-    product.name :
-    <span style={{color: 'red'}}>
-      {product.name}
-    </span>;
+  const color = product.stocked ? 'inherit' : 'red';
 
   return (
     <tr>
-      <td>{name}</td>
+      <td><span style={{color}}>{product.name}</span></td>
       <td>{product.price}</td>
     </tr>
   );
